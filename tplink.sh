@@ -1,0 +1,1 @@
+./tplink_smartplug.py -t 10.26.26.111 -c energy --influxdb http://127.0.0.1:8086 smarthome --influxdb_energy "energy,type=elec,device=hs110" --influxdb_power "power,type=elec,device=hs110" --influxdb_voltage "voltage,type=elec,device=hs110"
