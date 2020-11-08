@@ -116,11 +116,11 @@ if (args.command == "energy") and (args.influxdb != None):
 
 	# Get total_wh and power_mw from json response
 	energy_response = decrypt(data[4:])
-	energy_wh = json.loads(energy_response)['emeter']['get_realtime']['total']
+	energy_wh = json.loads(energy_response)['emeter']['get_realtime']['total_wh']
 	energy_joule = int(energy_wh)*3600
-	power_mW = json.loads(energy_response)['emeter']['get_realtime']['power']
+	power_mW = json.loads(energy_response)['emeter']['get_realtime']['power_mw']
 	power_W = float(power_mW)/1000.0
-	voltage_V = json.loads(energy_response)['emeter']['get_realtime']['voltage']
+	voltage_V = json.loads(energy_response)['emeter']['get_realtime']['voltage_mv']
 
 	# Build URI and query
 	# Something like req_url = "http://localhost:8086/write?db=smarthometest&precision=s"
